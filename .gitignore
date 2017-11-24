@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+.idea
+.gitignore
+
 # Distribution / packaging
 .Python
 env/
@@ -99,3 +102,10 @@ ENV/
 
 # mypy
 .mypy_cache/
+Conexion.py
+EchoBot.py
+FbChat.py
+ReadMsg.py
+SendMsg.py
+asincrono.py
+procesar.py
