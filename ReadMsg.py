@@ -7,8 +7,10 @@ class ReadMsg:
     sendMsg = None
     stopMsg = 1
     con = None
+    authorId = None
 
-    def __init__(self, fbChat):
+    def __init__(self, fbChat, author):
+        self.authorId = author
         self.sendMsg = SendMsg.sendMsg(fbChat)
 
     def setMessage(self, msg):
@@ -16,6 +18,12 @@ class ReadMsg:
 
     def stopMsg(self):
         self.stopMsg = 0
+
+    def setAuthorId(self, author):
+        self.authorId = author
+
+    def getAuthorId(self):
+        return self.authorId
 
     def decifrarComando(self, msg, code = None):  # En este metodo deberias hacer lo de PLN
         self.con = Conexion.Conexion()
