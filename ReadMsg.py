@@ -32,6 +32,7 @@ class ReadMsg:
             self.executeAction(SendMsg.sendMsg.ID_MSG_RESPONSE_TEMP, [fltTemperatura])
             self.con.close()
         elif msg == "dame la temperatura en todo momento" or code == 1:
+            self.stopMsg = 1
             while self.stopMsg:
                 fltTemperatura = self.con.lectura()
                 self.executeAction(SendMsg.sendMsg.ID_MSG_RESPONSE_TEMP, [fltTemperatura])
