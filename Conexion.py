@@ -24,18 +24,17 @@ class Conexion:
                                           )
 
     def close(self):
-       return 0
-       # self.puerto_serie.close()
+        self.puerto_serie.close()
 
     def lectura(self):
-        #self.puerto_serie.setDTR(True)  # indica que el canal esta listo para comunicarse
+        self.puerto_serie.setDTR(True)  # indica que el canal esta listo para comunicarse
         sleep(5)
-        #lectura = self.puerto_serie.readline().strip()
-        #Temp = lectura[1] + lectura[2] + lectura[3]
-        #print("esta es: ")
-        #print(lectura)
-        #print(time.strftime("%c"))
+        lectura = self.puerto_serie.readline().strip()
+        lectura.decode("utf-8")
+        print("esta es: ")
+        print(lectura)
+        print(time.strftime("%c"))
 
-       # lectura = float(lectura.replace(',', '.'))
-        #return lectura
+        lectura = float(lectura.replace(',', '.'))
+        return lectura
         return round(random.uniform(27, 28), 2)
